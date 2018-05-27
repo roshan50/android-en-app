@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <include android:id="@+id/appbar" layout="@layout/app_bar"/>
+
+    <android.support.v4.widget.DrawerLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/drawer_layout"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.roshan.dic.en_app.MainActivity">
+
+        </android.support.constraint.ConstraintLayout>
+
+        <fragment
+            android:layout_width="280dp"
+            android:layout_height="match_parent"
+            android:name="com.roshan.dic.en_app.NavFrag"
+            app:layout="@layout/fragment_nav"
+            tools:layout="@layout/fragment_nav"
+            android:layout_gravity="start"
+            android:id="@+id/navMain"
+            >
+
+        </fragment>
+
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>
