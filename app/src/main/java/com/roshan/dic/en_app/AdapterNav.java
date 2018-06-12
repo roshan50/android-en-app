@@ -2,6 +2,7 @@ package com.roshan.dic.en_app;
 
 import android.content.Context;
 import android.content.Intent;
+import android.speech.tts.TextToSpeech;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import com.gitonway.lee.niftymodaldialogeffects.lib.NiftyDialogBuilder;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by Asus on 5/22/2018.

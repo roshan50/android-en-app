@@ -1,42 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
-    android:layout_width="match_parent"
+
+<android.support.v4.widget.DrawerLayout
     android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <include android:id="@+id/appbar" layout="@layout/app_bar"/>
-
-    <android.support.v4.widget.DrawerLayout
-        android:layout_height="match_parent"
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/drawer_layout"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false">
+        
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:fitsSystemWindows="true">
 
-        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:fitsSystemWindows="true"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <include android:id="@+id/appbar" layout="@layout/app_bar"/>
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tabMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/appbar"
+                    android:layout_marginTop="60dp">
+                </android.support.design.widget.TabLayout>
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context="com.roshan.dic.en_app.MainActivity">
+            android:id="@+id/vpMain"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        </android.support.v4.view.ViewPager>
 
-        </android.support.constraint.ConstraintLayout>
 
-        <fragment
-            android:layout_width="280dp"
-            android:layout_height="match_parent"
-            android:name="com.roshan.dic.en_app.NavFrag"
-            app:layout="@layout/fragment_nav"
-            tools:layout="@layout/fragment_nav"
-            android:layout_gravity="start"
-            android:id="@+id/navMain"
-            >
+    </android.support.design.widget.CoordinatorLayout>
 
-        </fragment>
+    <fragment
+        android:id="@+id/navMain"
+        android:name="com.roshan.dic.en_app.NavFrag"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:layout_marginTop="40dp"
+        app:layout="@layout/fragment_nav"
+        tools:layout="@layout/fragment_nav"></fragment>
 
-    </android.support.v4.widget.DrawerLayout>
+</android.support.v4.widget.DrawerLayout>
 
-</LinearLayout>

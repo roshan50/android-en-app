@@ -10,4 +10,8 @@
     <string name="txtNavDialogExit">Exit</string>
     <string name="txtNavDialogExitMsg">Are You Sure?</string>
     <string name="title_activity__contact">Activity_Contact</string>
+    <string name="title_activity_word">Activity_word</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="IntroMsg">this is intro dialog</string>
+    <string name="IntroTitle">Intro</string>
 </resources>

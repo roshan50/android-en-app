@@ -10,10 +10,21 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/background_color</item>
+        <item name="android:textColorPrimary">@color/text_color</item>
+        <item name="android:textColorSecondary">@color/text_color</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="myAppTheme" parent="AppTheme">
+        <item name="colorPrimary">#8855ff</item>
+        <item name="colorPrimaryDark">#663399</item>
+        <item name="colorAccent">#FF00FF</item>
+        <item name="android:windowBackground">@color/violet</item>
+        <item name="android:textColorPrimary">#FF00FF</item>
+        <item name="android:textColorSecondary">#FF00FF</item>
+    </style>
 
 </resources>

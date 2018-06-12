@@ -22,7 +22,11 @@
         <activity
             android:name=".Activity_Contact"
             android:label="@string/title_activity__contact"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activity_word"
+            android:label="@string/title_activity_word"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>
