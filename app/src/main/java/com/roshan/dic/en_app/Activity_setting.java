@@ -6,7 +6,13 @@ import android.support.v4.widget.CompoundButtonCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SwitchCompat;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
+import android.widget.ListView;
+import android.widget.Toast;
 
 public class Activity_setting extends AppCompatActivity {
     private SwitchCompat switchCompat;
@@ -42,6 +48,24 @@ public class Activity_setting extends AppCompatActivity {
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
+        });
+
+
+        String[] fruitArray = {"apple","banana","chabbage","cherry",
+                "eggplant","glans","kiwi","mellon","onion","orange","pomegranate","straberry","tomato"};
+        ArrayAdapter<String> itemsAdapter =
+                new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, fruitArray);
+        ListView listView = (ListView) findViewById(R.id.lll);
+        listView.setAdapter(itemsAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, final View view,
+                                    int position, long id) {
+                final String item = (String) parent.getItemAtPosition(position);
+                Toast.makeText(Activity_setting.this, item, Toast.LENGTH_SHORT).show();
+            }
+
         });
     }
 }

@@ -26,9 +26,12 @@ public class fragment_word extends Fragment
     private ArrayList<Info_data> arrayList = new ArrayList<Info_data>();
     private DatabaseHelper databaseHelper;
     private Cursor cursor;
+    private String table;
 
     public fragment_word() {
         // Required empty public constructor
+//        String table = getArguments().getString("table");
+//        Log.d("table",table);
     }
 
     @Override
@@ -42,12 +45,27 @@ public class fragment_word extends Fragment
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
 
+try {
+//    table = getArguments().getString("table");
+    Toast.makeText(getActivity(), this.table, Toast.LENGTH_SHORT).show();
+}catch (Exception e){
+    System.out.println("Error: " + e.getMessage());
+    e.printStackTrace();
+}
+
 //        String table = getArguments().getString("table");
 
 
         loadDatabase();
         return viewGroup;
     }
+
+//    @Override
+//    public void onActivityCreated(Bundle savedInstanceState) {
+//        super.onActivityCreated(savedInstanceState);
+////        String bundle = getArguments().getString("table");
+////        Log.d("table",bundle);
+//    }
 
     public void loadDatabase(){
         databaseHelper = new DatabaseHelper(getActivity());
@@ -61,7 +79,7 @@ public class fragment_word extends Fragment
 
         try {
 
-//            Toast.makeText(getContext(), table, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getContext(), this.table, Toast.LENGTH_SHORT).show();
 
             cursor = databaseHelper.QueryData("select * from table_en");
 
@@ -78,6 +96,10 @@ public class fragment_word extends Fragment
         }catch (SQLiteException e){
             e.printStackTrace();
         }
+    }
+
+    public void setTable(String table1){
+        this.table = table1;
     }
 
 }

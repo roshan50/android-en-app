@@ -31,13 +31,15 @@ public class Activity_word extends AppCompatActivity {
 // get table name from previous activity(word504)
         Bundle b = getIntent().getExtras();
         String table = b.getString("table");
-// send table name to fragment
-        Bundle data = new Bundle();
-        data.putString("table", table);
-        fragment_word fragmentWord = new fragment_word();
-        fragmentWord.setArguments(data);
 
-//        Toast.makeText(this, table, Toast.LENGTH_SHORT).show();
+
+// send table name to fragment
+//        Bundle data = new Bundle();
+//        data.putString("table", table);
+        fragment_word fragmentWord = new fragment_word();
+//        fragmentWord.setArguments(data);
+
+        fragmentWord.setTable(table);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -48,6 +50,7 @@ public class Activity_word extends AppCompatActivity {
             }
         });
     }
+
 
 
 
